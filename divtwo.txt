@@ -1,0 +1,31 @@
+def divtwo(x):                                     #y = Ergebnis. Hier wird gespeichert, wie viele Paare gefunden haben werden.
+    [y, d, n] = [0, 0, 0]                          #d = er zeigt an, ob man bei der ersten oder zweiten Hälfte eines Paares befindet.
+    if (x < 0):                                    #n= Schleifenzähler
+        y = 0
+    else:
+        for n in range (0, x):                     #for = geht jede Einheit der Zahl x nacheinander durch.
+            if (d == 0):                           #wenn d auf 0 steht, wird das erste Element eines neuen Paares gefunden.
+                d = 1                              #d =1 = halbes paar
+            else:                                  #Wenn d=1 bedeutet: das zweite Element gefuden
+                y = (y + 1)                        #erhöhen das Ergebis um 1
+                d = 0                              #d wieder um 0 gesetzt, um dem nächsten Paar zu suchen.
+    return y
+#Diese Funktion erklärt die Binärziffern der Zahl n
+
+def bin(n):
+    [neva, doble, daniel, i, halt]=[0, 0, 0, 0, 0] #Initialisierung der Register
+    if (n <= 0):                                   #neva speichert Ergebnis von x/2
+        print(0)                                   #dobel Berechnet neva*2 durch Addition
+    else:                                          #danie=Bit(0 oder 1)
+        for i in range(0, n):                      #halt=unnötige Berechnungen, wenn n bereits 0 erreicht hat
+            if(halt == 0):                         #For = maximal n-mal lauft
+                neva = divtwo(n)                   #neva=divtwo...Ruft die Hilfsfunktion auf
+                doble =(neva + neva)               #doble(neva+neva) verdoppelt das Ergbnis
+                if (n == doble):                   #wenn die Zahl gleich dem Doppelten der Hälfte ist, war gerade 0, wenn nicht ungerade 1
+                    daniel = 0    
+                else:
+                    daniel = 1
+                print (daniel)                     #Gibt gas Bit auf dem Bildschrim 
+                n = neva                           #Aktualisisert n fuer naechsten Durchlaiuf
+    return -1
+ #Wir bekommen immer Fehler, wenn wir eine While schreiben. Daher haben wir for Schleife benutzt.
